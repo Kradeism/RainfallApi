@@ -56,10 +56,10 @@ namespace RainfallApi.Controllers
                     return BadRequest(errorResponse);
                 }
 
-                var result = await _rainfallReadingService.ExecuteAsync(stationId, number, token);
+                var result = await _rainfallReadingService.GetRainfallReadingAsync(stationId, number, token);
 
                 
-                if (result == null)
+                if (result.Items == null)
                 {
                     var errorDetail = _errorHandlingService.CreateErrorResponse(ErrorType.InvalidRequest);
                     errorResponse.ErrorDetails?.Add(errorDetail);

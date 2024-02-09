@@ -14,7 +14,7 @@ namespace RainfallApi.Services
         }
 
 
-        public async Task<RainfallReading> ExecuteAsync(string id, int number, CancellationToken cancellationToken)
+        public async Task<RainfallReading> GetRainfallReadingAsync(string id, int number, CancellationToken cancellationToken)
         {
             return await _rainfallReadingRepository.GetRainfallReadingAsync(id, number, cancellationToken);
         }

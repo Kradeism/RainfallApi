@@ -14,7 +14,7 @@ namespace RainfallApi.Services
                 ErrorType.InvalidRequest => new ErrorDetails { Name = ErrorMessages.InvalidRequest },
                 ErrorType.NoReadingsFound => new ErrorDetails { Name = ErrorMessages.NotFound },
                 ErrorType.InternalServerError => new ErrorDetails { Name = ErrorMessages.InternalServer },
-                _ => throw new NotImplementedException(),
+                _ => new ErrorDetails(),
             };
         }
     }
